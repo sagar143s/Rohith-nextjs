@@ -66,8 +66,8 @@ export const projectsData = [
     description:
       "I worked as a full-stack developer on a project for 3 months, focused on trading and integrating Zoom meetings",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Firebase","Vercel","Courier"],
-    iframeUrl: "https://bullandbearz.com",
-    },
+    imageUrl: "https://example.com/corpcomment.png",
+  },
   {
     title: "rmtDev",
     description:
