@@ -62,12 +62,12 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Bull And Bearz",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
-  },
+      "I worked as a full-stack developer on a project for 3 months, focused on trading and integrating Zoom meetings",
+    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Firebase","Vercel","Courier"],
+    iframeUrl: "https://bullandbearz.com",
+    },
   {
     title: "rmtDev",
     description:
