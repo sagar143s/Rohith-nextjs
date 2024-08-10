@@ -7,11 +7,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 // Define the type for the project props
 type ProjectProps = {
-  title: string;
-  description: string;
-  tags: string[];
-  imageUrl: string;
+    title: string;
+    description: string;
+    tags: string[];
+    imageUrl: string;
 };
+
 
 // Project component definition
 export default function Project({
@@ -19,7 +20,7 @@ export default function Project({
   description,
   tags,
   imageUrl,
-}: ProjectProps) {
+}: any) {
   // Create a reference for the scroll animation
   const ref = useRef<HTMLDivElement>(null);
 
@@ -49,7 +50,7 @@ export default function Project({
             {description}
           </p>
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
+            {tags.map((tag:any, index:any) => (
               <li
                 className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
                 key={index}
