@@ -33,8 +33,8 @@ export default function Contact() {
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
+        <a className="underline" href="mailto:rohithsagarm@gmail.com">
+          rohithsagarm@gmail.com
         </a>{" "}
         or through this form.
       </p>
@@ -59,6 +59,14 @@ export default function Contact() {
           required
           maxLength={500}
           placeholder="Your email"
+        />
+         <input
+          className="h-14 px-4 mt-3 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          name="sender Mobile Number"
+          type="number"
+          required
+          maxLength={500}
+          placeholder="Your Mobile Number"
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
