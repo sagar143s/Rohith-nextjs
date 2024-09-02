@@ -21,7 +21,7 @@ export default function Project({
   linkUrl,
   index,
 }: ProjectProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLAnchorElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -35,16 +35,17 @@ export default function Project({
 
   return (
     <motion.a
-      href={linkUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-      className="group block mb-8"
-    >
+    href={linkUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    ref={ref} // Use the ref with the correct type
+    style={{
+      scale: scaleProgress,
+      opacity: opacityProgress,
+    }}
+    className="group block mb-8"
+  >
+
       <section
         className={`relative flex flex-col ${
           isOdd ? "md:flex-row" : "md:flex-row-reverse"
