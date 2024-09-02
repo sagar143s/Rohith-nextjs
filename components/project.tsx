@@ -1,76 +1,82 @@
 "use client";
 
 import { useRef } from "react";
-import { projectsData } from "@/lib/data";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
-// Define the type for the project props
 type ProjectProps = {
   title: string;
   description: string;
   tags: string[];
   imageUrl: string;
-  linkUrl: string;  // <-- Add linkUrl to the type
+  linkUrl: string;
+  index: number;
 };
 
-// Project component definition
 export default function Project({
   title,
   description,
   tags,
   imageUrl,
-  linkUrl,  // <-- Include linkUrl in the props
+  linkUrl,
+  index,
 }: ProjectProps) {
-  // Create a reference for the scroll animation
   const ref = useRef<HTMLDivElement>(null);
 
-  // Use Framer Motion's useScroll to track scroll progress
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
 
-  // Transform scroll progress into scale and opacity values
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.15, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+
+  const isOdd = index % 2 !== 0;
 
   return (
     <motion.a
-      href={linkUrl}  // <-- Add linkUrl to href
-      target="_blank"  // <-- Open the link in a new tab
-      rel="noopener noreferrer"  // <-- Security for external links
+      href={linkUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       ref={ref}
       style={{
         scale: scaleProgress,
         opacity: opacityProgress,
       }}
-      className="group mb-3 sm:mb-8 last:mb-0 block"  // <-- Use block to make the whole card clickable
+      className="group block mb-8"
     >
-      <section className="relative bg-gray-100 border border-black/5 rounded-lg overflow-hidden sm:h-[20rem] hover:bg-gray-200 transition dark:text-white dark:bg-white/10 dark:hover:bg-white/20 flex flex-col sm:flex-row">
-        <div className="flex flex-col h-full pt-4 pb-7 px-5 sm:pl-10 sm:pr-10 sm:pt-10 sm:w-full">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag: any, index: any) => (
+      <section
+        className={`relative flex flex-col ${
+          isOdd ? "md:flex-row" : "md:flex-row-reverse"
+        } items-center bg-[#1a1a2e] border border-gray-700 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 ease-in-out min-h-[300px] sm:h-[400px]`}
+      >
+        <div className="relative w-full md:w-1/2 h-[300px] sm:h-[400px] overflow-hidden">
+          <div className="relative h-full overflow-hidden group">
+            <Image
+              src={imageUrl}
+              alt={`Project: ${title}`}
+              quality={95}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="top"
+              className="transition-transform duration-[3000ms] ease-in-out"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col p-6 md:w-1/2">
+          <h3 className="text-2xl font-semibold text-white">{title}</h3>
+          <p className="mt-4 text-sm text-gray-300">{description}</p>
+          <ul className="flex flex-wrap mt-4 gap-2">
+            {tags.map((tag, tagIndex) => (
               <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
+                className="bg-gray-800 text-white text-xs px-3 py-1 rounded-full"
+                key={tagIndex}
               >
                 {tag}
               </li>
             ))}
           </ul>
         </div>
-
-        <Image
-          src={imageUrl}
-          alt={`Project: ${title}`}
-          quality={95}
-          className="hidden sm:block sm:w-[50%] sm:object-cover"
-        />
       </section>
     </motion.a>
   );

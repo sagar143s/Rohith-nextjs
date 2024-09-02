@@ -89,7 +89,7 @@ export const projectsData = [
   {
     title: "Taseesrealestate",
     description:
-      "This is a real estate website for a Dubai-based company, built using WordPress.",
+      "TASEES REAL ESTATE was established in 2012 to become the most trusted Dubai Real Estate Brand for Dubai Investors, Landlords, Tenants and Developers.",
     tags: ["Wordpress", "PHP", "HTML", "CSS", "Javascript"],
     imageUrl: Taseesrrealestate,
     linkUrl: "https://taseesrealestate.ae" 
@@ -97,7 +97,7 @@ export const projectsData = [
   {
     title: "Bossini",
     description:
-    "This website is created using Shopify, employing the Liquid language . It serves as an e-commerce platform.",
+    "bossini eShop, comfy, easy-matching and energic outfits are the key of our products. We provides tee, POLO, bottom, jeans,Top, short.",
     tags: ["Shopify", "HTML Liquid", "HTML", "CSS", "Javascript"],
     imageUrl: Bossini,
     linkUrl: "https://bossini.ae" 
@@ -105,7 +105,7 @@ export const projectsData = [
   {
     title: "Shopcin",
     description:
-      "This website is created using Shopify, employing the Liquid language and React Hydrogen. It serves as an e-commerce platform.",
+      "The one-stop online shopping destination. Shop Bossini, Peak, Li-ning, and other brands' collections. Best offers for Shoes, fashion wear, electronics, ...",
     tags: ["Shopify","HTML Liquid", "React Hydrogen", "HTML", "CSS", "JavaScript"],
     imageUrl: Shopcin,
     linkUrl: "https://shopcin.com" 
@@ -113,7 +113,7 @@ export const projectsData = [
   {
     title: "Wpmoda",
     description:
-      "This website is created using Shopify, employing the Liquid language and React Hydrogen. It serves as an e-commerce platform.",
+      "WP is the heartbeat of global fashion. As a multi-fashion holding group, we curate style, champion innovation, and redefine trends. From luxury to streetwear, our diverse portfolio reflects a commitment to creativity, sustainability, and inclusivity.",
       tags: ["React", "Next.js", "Material UI", "Git", "MongoDB", "Firebase","Vercel","Courier","Cloudinary", ],
       imageUrl: Wpmoda,
       linkUrl: "https://wpmoda.com" 
@@ -121,7 +121,7 @@ export const projectsData = [
   {
     title: "Coloniume",
     description:
-      "This website is created using Shopify, employing the Liquid language and React Hydrogen. It serves as an e-commerce platform.",
+      "Coloniume will be developed and expanded by individuals and organizations, providing a completely free and secure communication platform. With Coloniume, users ...",
       tags: ["React", "Next.js", "Material UI", "Git", "MongoDB", "Firebase","Vercel","Courier","Cloudinary", ],
       imageUrl: Coloniume,
       linkUrl: "https://coloniume.org" 
