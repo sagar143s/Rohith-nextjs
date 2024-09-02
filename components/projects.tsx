@@ -11,15 +11,16 @@ export default function Projects() {
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-5 mb-28 max-w-[65rem]">
-      <SectionHeading>My projects ( Last 6 months )</SectionHeading>
+      <SectionHeading>My projects (Last 6 months)</SectionHeading>
       <div>
-        {projectsData.map((project, index) => (
+        {projectsData.map((project:any, index) => (
           <React.Fragment key={index}>
-            {/* <Project {...project} /> */}
-            <Project {...project} />
+            <Project {...project}
+            index={index}
+            />
           </React.Fragment>
         ))}
       </div>
-    </section>
+    </section>   
   );
 }

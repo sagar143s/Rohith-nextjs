@@ -85,6 +85,7 @@ export const projectsData = [
     tags: ["React", "Next.js", "Material UI", "Git","Zoom api’s", "MongoDB", "Firebase","Vercel","Courier", "Stripe","Cloudinary", ],
     imageUrl: Bb,
     linkUrl: "https://bullandbearz.com" 
+
   },
   {
     title: "Taseesrealestate",
@@ -93,6 +94,7 @@ export const projectsData = [
     tags: ["Wordpress", "PHP", "HTML", "CSS", "Javascript"],
     imageUrl: Taseesrrealestate,
     linkUrl: "https://taseesrealestate.ae" 
+    
   },
   {
     title: "Bossini",
