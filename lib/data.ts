@@ -1,6 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaHtml5, FaReact, FaWordpress } from "react-icons/fa";
+import { FaCode, FaCodepen, FaHtml5, FaReact, FaWordpress } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
@@ -9,6 +9,8 @@ import Bb from "../public/bb.png"
 import Shopcin from '../public/shopcin.png'
 import Bossini from '../public/bossini.png'
 import Taseesrrealestate from "../public/taseesrealestate.png"
+import Coloniume from '../public/Coloniume.png'
+import Wpmoda from '../public/WPMODA.png'
 
 
 export const links = [
@@ -44,8 +46,9 @@ export const experiencesData = [
     location: "Hashgate IT Technologies LLC",
     description:
       "HASHGATE IT Technologies LLC is an IT company based in Dubai. My role at HASHGATE involves working as a Shopify Developer, WordPress Developer, and specializing in React.js and Next.js. ",
-    icon: React.createElement(FaWordpress),
+    icon: React.createElement(FaCode),
     date: "01/2023 - Present",
+    
   },
   {
     title: "Web developer",
@@ -60,7 +63,7 @@ export const experiencesData = [
     location: "Cream And Fudge",
     description:
       "At Cream And Fudge, an ice cream company, I worked as a web developer, creating their WordPress website and handling SEO.",
-    icon: React.createElement(FaWordpress),
+    icon: React.createElement(FaReact),
     date: "11/2019 - 02/2022",
   },
   {
@@ -81,6 +84,7 @@ export const projectsData = [
       "In a three-month project, I developed a trading platform using React, Next.js, and Material UI, integrated Zoom API and Stripe, and managed data with MongoDB, Firebase, and Cloudinary. I handled version control with Git, deployed on Vercel, and used Courier for notifications.",
     tags: ["React", "Next.js", "Material UI", "Git","Zoom api’s", "MongoDB", "Firebase","Vercel","Courier", "Stripe","Cloudinary", ],
     imageUrl: Bb,
+    linkUrl: "https://bullandbearz.com" 
   },
   {
     title: "Taseesrealestate",
@@ -88,6 +92,7 @@ export const projectsData = [
       "This is a real estate website for a Dubai-based company, built using WordPress.",
     tags: ["Wordpress", "PHP", "HTML", "CSS", "Javascript"],
     imageUrl: Taseesrrealestate,
+    linkUrl: "https://taseesrealestate.ae" 
   },
   {
     title: "Bossini",
@@ -95,6 +100,7 @@ export const projectsData = [
     "This website is created using Shopify, employing the Liquid language . It serves as an e-commerce platform.",
     tags: ["Shopify", "HTML Liquid", "HTML", "CSS", "Javascript"],
     imageUrl: Bossini,
+    linkUrl: "https://bossini.ae" 
   },
   {
     title: "Shopcin",
@@ -102,8 +108,25 @@ export const projectsData = [
       "This website is created using Shopify, employing the Liquid language and React Hydrogen. It serves as an e-commerce platform.",
     tags: ["Shopify","HTML Liquid", "React Hydrogen", "HTML", "CSS", "JavaScript"],
     imageUrl: Shopcin,
+    linkUrl: "https://shopcin.com" 
   },
- 
+  {
+    title: "Wpmoda",
+    description:
+      "This website is created using Shopify, employing the Liquid language and React Hydrogen. It serves as an e-commerce platform.",
+      tags: ["React", "Next.js", "Material UI", "Git", "MongoDB", "Firebase","Vercel","Courier","Cloudinary", ],
+      imageUrl: Wpmoda,
+      linkUrl: "https://wpmoda.com" 
+  },
+  {
+    title: "Coloniume",
+    description:
+      "This website is created using Shopify, employing the Liquid language and React Hydrogen. It serves as an e-commerce platform.",
+      tags: ["React", "Next.js", "Material UI", "Git", "MongoDB", "Firebase","Vercel","Courier","Cloudinary", ],
+      imageUrl: Coloniume,
+      linkUrl: "https://coloniume.org" 
+  }
+  
 ] as const;
 
 export const skillsData = [

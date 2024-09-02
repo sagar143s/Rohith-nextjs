@@ -7,12 +7,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 // Define the type for the project props
 type ProjectProps = {
-    title: string;
-    description: string;
-    tags: string[];
-    imageUrl: string;
+  title: string;
+  description: string;
+  tags: string[];
+  imageUrl: string;
+  linkUrl: string;  // <-- Add linkUrl to the type
 };
-
 
 // Project component definition
 export default function Project({
@@ -20,7 +20,8 @@ export default function Project({
   description,
   tags,
   imageUrl,
-}: any) {
+  linkUrl,  // <-- Include linkUrl in the props
+}: ProjectProps) {
   // Create a reference for the scroll animation
   const ref = useRef<HTMLDivElement>(null);
 
@@ -35,22 +36,25 @@ export default function Project({
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
-    <motion.div
+    <motion.a
+      href={linkUrl}  // <-- Add linkUrl to href
+      target="_blank"  // <-- Open the link in a new tab
+      rel="noopener noreferrer"  // <-- Security for external links
       ref={ref}
       style={{
         scale: scaleProgress,
         opacity: opacityProgress,
       }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+      className="group mb-3 sm:mb-8 last:mb-0 block"  // <-- Use block to make the whole card clickable
     >
-      <section className="relative bg-gray-100 border border-black/5 rounded-lg overflow-hidden sm:h-[20rem] hover:bg-gray-200 transition dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="flex flex-col h-full pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] sm:group-even:ml-[18rem]">
+      <section className="relative bg-gray-100 border border-black/5 rounded-lg overflow-hidden sm:h-[20rem] hover:bg-gray-200 transition dark:text-white dark:bg-white/10 dark:hover:bg-white/20 flex flex-col sm:flex-row">
+        <div className="flex flex-col h-full pt-4 pb-7 px-5 sm:pl-10 sm:pr-10 sm:pt-10 sm:w-full">
           <h3 className="text-2xl font-semibold">{title}</h3>
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
             {description}
           </p>
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag:any, index:any) => (
+            {tags.map((tag: any, index: any) => (
               <li
                 className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
                 key={index}
@@ -65,9 +69,9 @@ export default function Project({
           src={imageUrl}
           alt={`Project: ${title}`}
           quality={95}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl transition-transform duration-300 group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2 group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2 group-even:right-[initial] group-even:-left-40"
+          className="hidden sm:block sm:w-[50%] sm:object-cover"
         />
       </section>
-    </motion.div>
+    </motion.a>
   );
 }
