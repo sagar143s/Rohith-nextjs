@@ -96,7 +96,7 @@ export default function Intro() {
           href="/Rohit Sagar.pdf"
           download
         > 
-          Download Rohit Sagar{" "}
+          Download Resume{" "}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
 
